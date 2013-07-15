@@ -16,13 +16,15 @@ not expected.
 
 ## Building it / dependencies
 
-No dependencies apart from a basic C-compiler and standard libraries should be needed.
+No dependencies apart from a basic C-compiler and standard libraries should be needed to build these tools.
 
 On Debian-based Linux-distros the following should be enough:
 
     # root required.
     $ sudo apt-get install build-essential
     # this will take some time
+
+Building the tools should be a straight forward task, without any need for autotools:
 	
 	# no root required for the remaining work.
     $ gcc radiotrim.c -o radiotrim
@@ -30,7 +32,11 @@ On Debian-based Linux-distros the following should be enough:
     # quickly done
     $ _
 
-## I9250 radiograbber
+To *use* these tools, you need to have the [Android SDK](https://developer.android.com/sdk/index.html)
+installed and have its command-line tools in your shell path. Specifically you
+need adb up and working.
+
+## Checking that adb works
 
 If you want to grab a radio off a device, ensure that you have adb working and ready, 
 as the grabber depends on this. Adb needs to be in your path.
@@ -45,6 +51,8 @@ Connect you phone via USB and execute the following:
 
 Reported serial doesn't matter. What's important is that your phone shows up. If it doesn't google
 the internet to figure how to make adb work in your environment.
+
+## I9250 radiograbber
 
 With all that out of the way, you should be ready to rip your radio.
 
