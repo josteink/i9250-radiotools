@@ -79,7 +79,11 @@ The resulting file, radio.img, is your ripped and trimmed radio, in fastboot for
 
 ## Radiotrim
 
-This is just as easy. In a console, just specify the source and the destination file and you are pretty much done.
+If you have a radio firmware-image which you cannot flash with fastboot, because it is reported
+to be too large you can trim your image prior to flashing it.
+
+This is just as easy as grabbing an image. In a console, just specify the source and the
+destination file and you are pretty much done.
 
     $ ./radiotrim radio.img trimmed.img
     
