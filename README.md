@@ -36,6 +36,9 @@ To *use* these tools, you need to have the [Android SDK](https://developer.andro
 installed and have its command-line tools in your shell path. Specifically you
 need adb up and working.
 
+The phone which you want to extract the radio-firmware from must also be *rooted*,
+otherwise the tool wont be able to access the actual firmware itself.
+
 ## Checking that adb works
 
 If you want to grab a radio off a device, ensure that you have adb working and ready, 
