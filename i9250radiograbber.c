@@ -21,6 +21,22 @@ int i;
 int result;
 int nameOffset;
 
+int ret;
+int sysexec(char *command)
+{
+	ret = system(command);
+
+	//if (WIFSIGNALED(ret) &&
+ //       (WTERMSIG(ret) == SIGINT || WTERMSIG(ret) == SIGQUIT))
+	if (ret != 0)
+	{
+		fprintf(stderr, "Error executing command: %s\n", command);
+        exit(1);
+	}
+
+	return 0;
+}
+
 int main( int argc, char *argv[] )
 {
 	printf("\nSamsung Galaxy Nexus I9250 radio-image grabber.\n");
@@ -119,21 +135,5 @@ int main( int argc, char *argv[] )
 	remove("raw.img");
 
 	// goodbye
-	return 0;
-}
-
-int ret;
-int sysexec(char *command)
-{
-	ret = system(command);
-
-	//if (WIFSIGNALED(ret) &&
- //       (WTERMSIG(ret) == SIGINT || WTERMSIG(ret) == SIGQUIT))
-	if (ret != 0)
-	{
-		fprintf(stderr, "Error executing command: %s\n", command);
-        exit(1);
-	}
-
 	return 0;
 }
